@@ -1,0 +1,19 @@
+  public static Collection<String> diferenciarArray(ArrayList array1, ArrayList array2) {
+        Collection list1 = new ArrayList(array1);
+        Collection list2 = new ArrayList(array2);
+
+        Collection<String> similar = new HashSet<String>( list1 );
+        Collection<String> different = new HashSet<String>();
+        different.addAll(list1);
+        different.addAll(list2);
+
+        similar.retainAll(list2);
+        different.removeAll(similar);
+
+        return different;
+  }
+
+  public static void main(String[] args) {
+       Collection<String> different = diferenciarArray(array1,array2);
+       System.out.println(different);
+  }
